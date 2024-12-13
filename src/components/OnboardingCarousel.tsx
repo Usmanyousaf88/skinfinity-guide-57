@@ -15,12 +15,12 @@ const cards = [
     subheading: "Snap a photo of your face, and let us take care of the rest.",
   },
   {
-    image: "/lovable-uploads/f78bdcb9-020b-4bc6-abb6-195f9a4cef5f.png",
+    image: "/lovable-uploads/b4b7315f-1bef-42f9-84cd-d5c811c3060f.png",
     heading: "Advanced Skin Analysis",
     subheading: "Identify your skin concerns and discover personalized solutions designed just for you.",
   },
   {
-    image: "/lovable-uploads/01728aed-e5ba-4358-8bdf-7bc83e88006d.png",
+    image: "/lovable-uploads/f78bdcb9-020b-4bc6-abb6-195f9a4cef5f.png",
     heading: "Achieve Your Skin Goals",
     subheading: "Whether it's glowing skin or reducing wrinkles, we'll create a routine tailored to you.",
   },
