@@ -25,16 +25,6 @@ const cards = [
   },
 ];
 
-const NextButton = ({ onClick }: { onClick?: () => void }) => (
-  <Button
-    size="lg"
-    onClick={onClick}
-    className="w-32 bg-primary hover:bg-primary-hover text-white font-semibold rounded-full"
-  >
-    {onClick ? "Get Started" : "Next"}
-  </Button>
-);
-
 export const OnboardingCarousel = () => {
   const navigate = useNavigate();
 
@@ -72,10 +62,21 @@ export const OnboardingCarousel = () => {
                       ))}
                     </div>
                     {index === cards.length - 1 ? (
-                      <NextButton onClick={() => navigate("/quiz")} />
+                      <Button
+                        size="lg"
+                        onClick={() => navigate("/quiz")}
+                        className="w-32 bg-primary hover:bg-primary-hover text-white font-semibold rounded-full"
+                      >
+                        Get Started
+                      </Button>
                     ) : (
                       <CarouselNext asChild>
-                        <NextButton />
+                        <Button
+                          size="lg"
+                          className="w-32 bg-primary hover:bg-primary-hover text-white font-semibold rounded-full"
+                        >
+                          Next
+                        </Button>
                       </CarouselNext>
                     )}
                   </div>
