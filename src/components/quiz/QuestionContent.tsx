@@ -10,12 +10,14 @@ interface QuestionContentProps {
 export const QuestionContent = ({ question, selectedOption, onSelect }: QuestionContentProps) => {
   if (question.infographic) {
     return (
-      <div className="fixed inset-0 bg-white flex items-center justify-center p-4">
-        <img 
-          src="/lovable-uploads/47438613-4135-4bf6-8138-04751630b583.png" 
-          alt="Skincare Routine Infographic" 
-          className="max-w-full h-[calc(100vh-120px)] object-contain"
-        />
+      <div className="flex-1 flex flex-col">
+        <div className="flex-1 relative">
+          <img 
+            src="/lovable-uploads/47438613-4135-4bf6-8138-04751630b583.png" 
+            alt="Skincare Routine Infographic" 
+            className="max-w-full h-[calc(100vh-180px)] object-contain mx-auto"
+          />
+        </div>
       </div>
     );
   }

@@ -52,7 +52,7 @@ export const Quiz = () => {
           onSelect={handleSelect}
         />
 
-        <div className="sticky bottom-6 mt-6">
+        <div className="mt-auto pt-6">
           <QuizButton
             onClick={handleNext}
             disabled={!selectedOption}
