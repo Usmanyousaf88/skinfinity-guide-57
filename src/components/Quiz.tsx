@@ -55,7 +55,7 @@ export const Quiz = () => {
         <div className="mt-auto pt-6">
           <QuizButton
             onClick={handleNext}
-            disabled={!selectedOption}
+            disabled={question.infographic ? false : !selectedOption}
           />
         </div>
       </div>
