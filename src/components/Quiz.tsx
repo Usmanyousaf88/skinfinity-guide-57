@@ -4,6 +4,7 @@ import { QuestionHeader } from "./quiz/QuestionHeader";
 import { QuestionContent } from "./quiz/QuestionContent";
 import { QuizButton } from "./quiz/QuizButton";
 import { SkinCareInfographic } from "./quiz/SkinCareInfographic";
+import { QuestionOption } from "./quiz/QuestionOption";
 import { questions } from "./quiz/questions";
 
 export const Quiz = () => {
@@ -62,7 +63,7 @@ export const Quiz = () => {
                   subtext={option.subtext}
                   icon={option.icon}
                   isSelected={selectedOption === option.text}
-                  onClick={() => onSelect(option.text)}
+                  onClick={() => handleSelect(option.text)}
                 />
               ))}
             </div>
