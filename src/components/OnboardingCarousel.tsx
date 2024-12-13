@@ -43,14 +43,16 @@ export const OnboardingCarousel = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/30" />
                 </div>
-                <div className="bg-white rounded-t-[32px] -mt-8 px-6 pt-8 pb-10 relative z-10">
-                  <h1 className="text-3xl font-bold text-skin-charcoal mb-3">
-                    {card.heading}
-                  </h1>
-                  <p className="text-lg text-gray-600 mb-8">
-                    {card.subheading}
-                  </p>
-                  <div className="flex items-center justify-between">
+                <div className="bg-white rounded-t-[32px] -mt-8 px-6 pt-8 pb-10 relative z-10 min-h-[240px] flex flex-col justify-between">
+                  <div>
+                    <h1 className="text-3xl font-bold text-skin-charcoal mb-3">
+                      {card.heading}
+                    </h1>
+                    <p className="text-lg text-gray-600">
+                      {card.subheading}
+                    </p>
+                  </div>
+                  <div className="flex items-center justify-between mt-8">
                     <div className="flex gap-2">
                       {cards.map((_, i) => (
                         <div
@@ -70,7 +72,7 @@ export const OnboardingCarousel = () => {
                         Get Started
                       </Button>
                     ) : (
-                      <CarouselNext>
+                      <CarouselNext asChild>
                         <Button
                           size="lg"
                           className="w-32 bg-primary hover:bg-primary-hover text-white font-semibold rounded-full"
