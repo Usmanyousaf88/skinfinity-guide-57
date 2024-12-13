@@ -8,6 +8,18 @@ interface QuestionContentProps {
 }
 
 export const QuestionContent = ({ question, selectedOption, onSelect }: QuestionContentProps) => {
+  if (question.infographic) {
+    return (
+      <div className="fixed inset-0 bg-white flex items-center justify-center p-4">
+        <img 
+          src={question.infographic} 
+          alt="Skincare Routine Infographic" 
+          className="max-w-full max-h-full object-contain"
+        />
+      </div>
+    );
+  }
+
   return (
     <>
       <div className="mb-8">
@@ -16,16 +28,6 @@ export const QuestionContent = ({ question, selectedOption, onSelect }: Question
           <p className="text-gray-600 text-lg">{question.subtext}</p>
         )}
       </div>
-
-      {question.infographic && (
-        <div className="mb-8">
-          <img 
-            src={question.infographic} 
-            alt="Skincare Routine Infographic" 
-            className="max-w-md mx-auto"
-          />
-        </div>
-      )}
 
       <div className="space-y-3 mb-auto">
         {question.options.map((option, index) => (
