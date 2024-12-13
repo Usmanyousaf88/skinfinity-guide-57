@@ -72,14 +72,18 @@ export const OnboardingCarousel = () => {
                         Get Started
                       </Button>
                     ) : (
-                      <CarouselNext asChild>
-                        <Button
-                          size="lg"
-                          className="w-32 bg-primary hover:bg-primary-hover text-white font-semibold rounded-full"
-                        >
-                          Next
-                        </Button>
-                      </CarouselNext>
+                      <Button
+                        size="lg"
+                        className="w-32 bg-primary hover:bg-primary-hover text-white font-semibold rounded-full"
+                        onClick={() => {
+                          const nextButton = document.querySelector('[data-carousel-next]');
+                          if (nextButton instanceof HTMLElement) {
+                            nextButton.click();
+                          }
+                        }}
+                      >
+                        Next
+                      </Button>
                     )}
                   </div>
                 </div>
@@ -87,6 +91,7 @@ export const OnboardingCarousel = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
+        <CarouselNext className="hidden" />
       </Carousel>
     </div>
   );
