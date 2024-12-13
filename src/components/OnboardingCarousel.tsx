@@ -70,7 +70,7 @@ export const OnboardingCarousel = () => {
                         Get Started
                       </Button>
                     ) : (
-                      <CarouselNext asChild>
+                      <CarouselNext>
                         <Button
                           size="lg"
                           className="w-32 bg-primary hover:bg-primary-hover text-white font-semibold rounded-full"
