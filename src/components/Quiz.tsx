@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { Button } from "./ui/button";
 import { useNavigate } from "react-router-dom";
 import { QuestionHeader } from "./quiz/QuestionHeader";
 import { QuestionOption } from "./quiz/QuestionOption";
+import { QuizButton } from "./quiz/QuizButton";
 
 interface Question {
   id: number;
@@ -238,13 +238,10 @@ export const Quiz = () => {
         </div>
 
         <div className="sticky bottom-6 mt-6">
-          <Button
+          <QuizButton
             onClick={handleNext}
             disabled={!selectedOption}
-            className="w-full py-6 text-lg rounded-full bg-primary hover:bg-primary/90 disabled:bg-gray-200"
-          >
-            Next
-          </Button>
+          />
         </div>
       </div>
     </div>
