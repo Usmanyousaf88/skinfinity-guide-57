@@ -1,4 +1,4 @@
-import { Camera, FileSparkles, Heart, Shield } from "lucide-react";
+import { Camera, Sparkles, Heart, Shield } from "lucide-react";
 
 const features = [
   {
@@ -14,7 +14,7 @@ const features = [
       "Receive personalized skincare routines tailored to your unique skin profile.",
   },
   {
-    icon: FileSparkles,
+    icon: Sparkles,
     title: "Progress Tracking",
     description:
       "Track your skin's improvement over time with our advanced AI technology.",
