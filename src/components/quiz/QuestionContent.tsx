@@ -13,8 +13,8 @@ export const QuestionContent = ({ question, selectedOption, onSelect }: Question
       <div className="flex-1 flex flex-col">
         <div className="flex-1 relative">
           <img 
-            src="/lovable-uploads/47438613-4135-4bf6-8138-04751630b583.png" 
-            alt="Skincare Routine Infographic" 
+            src="/lovable-uploads/aafb61fc-a32d-4242-9d37-965d250f6623.png" 
+            alt="Healthy Skin Guide" 
             className="max-w-full h-[calc(100vh-180px)] object-contain mx-auto"
           />
         </div>
