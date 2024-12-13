@@ -12,9 +12,9 @@ export const QuestionContent = ({ question, selectedOption, onSelect }: Question
     return (
       <div className="fixed inset-0 bg-white flex items-center justify-center p-4">
         <img 
-          src={question.infographic} 
+          src="/lovable-uploads/47438613-4135-4bf6-8138-04751630b583.png" 
           alt="Skincare Routine Infographic" 
-          className="max-w-full max-h-full object-contain"
+          className="max-w-full h-[calc(100vh-120px)] object-contain"
         />
       </div>
     );
