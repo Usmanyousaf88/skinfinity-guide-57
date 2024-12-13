@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { QuestionHeader } from "./quiz/QuestionHeader";
 import { QuestionContent } from "./quiz/QuestionContent";
 import { QuizButton } from "./quiz/QuizButton";
+import { SkinCareInfographic } from "./quiz/SkinCareInfographic";
 import { questions } from "./quiz/questions";
 
 export const Quiz = () => {
@@ -36,6 +37,7 @@ export const Quiz = () => {
 
   const question = questions[currentQuestion];
   const selectedOption = answers[question.id];
+  const showInfographic = currentQuestion === 4; // Question about skincare routine is index 4
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
@@ -46,11 +48,32 @@ export const Quiz = () => {
           onBack={handleBack}
         />
 
-        <QuestionContent
-          question={question}
-          selectedOption={selectedOption}
-          onSelect={handleSelect}
-        />
+        {showInfographic ? (
+          <>
+            <div className="mb-8">
+              <h1 className="text-4xl font-bold mb-2">{question.question}</h1>
+            </div>
+            <SkinCareInfographic />
+            <div className="space-y-3 mt-6 mb-auto">
+              {question.options.map((option, index) => (
+                <QuestionOption
+                  key={index}
+                  text={option.text}
+                  subtext={option.subtext}
+                  icon={option.icon}
+                  isSelected={selectedOption === option.text}
+                  onClick={() => onSelect(option.text)}
+                />
+              ))}
+            </div>
+          </>
+        ) : (
+          <QuestionContent
+            question={question}
+            selectedOption={selectedOption}
+            onSelect={handleSelect}
+          />
+        )}
 
         <div className="sticky bottom-6 mt-6">
           <QuizButton
