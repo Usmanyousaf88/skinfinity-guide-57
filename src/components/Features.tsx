@@ -29,22 +29,24 @@ const features = [
 
 export const Features = () => {
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center text-skin-charcoal mb-16">
+    <section className="py-12 bg-white px-4">
+      <div className="container mx-auto max-w-lg">
+        <h2 className="text-2xl font-bold text-center text-skin-charcoal mb-8">
           Your Path to Healthier Skin
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 gap-4">
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="p-6 rounded-2xl bg-skin-cream hover:shadow-lg transition-shadow duration-300"
+              className="p-6 rounded-2xl bg-skin-cream hover:shadow-lg transition-shadow duration-300 flex items-start gap-4"
             >
-              <feature.icon className="w-12 h-12 text-primary mb-4" />
-              <h3 className="text-xl font-semibold text-skin-charcoal mb-2">
-                {feature.title}
-              </h3>
-              <p className="text-gray-600">{feature.description}</p>
+              <feature.icon className="w-8 h-8 text-primary shrink-0" />
+              <div>
+                <h3 className="text-lg font-semibold text-skin-charcoal mb-2">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600">{feature.description}</p>
+              </div>
             </div>
           ))}
         </div>
