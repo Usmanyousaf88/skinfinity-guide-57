@@ -25,6 +25,8 @@ export const QuestionContent = ({ question, selectedOption, onSelect }: Question
         {question.subtext && (
           <p className="text-gray-600 text-lg">{question.subtext}</p>
         )}
+        {/* Show infographic immediately after the question text */}
+        {question.question === "How often do you follow a skincare routine?" && <SkinCareInfographic />}
       </div>
 
       <div className="space-y-3 mb-auto">
@@ -39,9 +41,6 @@ export const QuestionContent = ({ question, selectedOption, onSelect }: Question
           />
         ))}
       </div>
-
-      {/* Show infographic after the "How often do you follow a skincare routine?" question */}
-      {question.question === "How often do you follow a skincare routine?" && <SkinCareInfographic />}
     </>
   );
 };
