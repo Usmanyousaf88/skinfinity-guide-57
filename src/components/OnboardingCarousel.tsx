@@ -6,6 +6,7 @@ import {
   CarouselNext,
 } from "@/components/ui/carousel";
 import { useNavigate } from "react-router-dom";
+import { useRef } from "react";
 
 const cards = [
   {
@@ -27,10 +28,16 @@ const cards = [
 
 export const OnboardingCarousel = () => {
   const navigate = useNavigate();
+  const carouselApi = useRef<any>(null);
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
-      <Carousel className="flex-1 w-full">
+      <Carousel 
+        className="flex-1 w-full"
+        setApi={(api) => {
+          carouselApi.current = api;
+        }}
+      >
         <CarouselContent>
           {cards.map((card, index) => (
             <CarouselItem key={index}>
@@ -75,9 +82,8 @@ export const OnboardingCarousel = () => {
                       <Button
                         size="lg"
                         onClick={() => {
-                          const nextButton = document.querySelector('[aria-label="Next slide"]');
-                          if (nextButton instanceof HTMLElement) {
-                            nextButton.click();
+                          if (carouselApi.current) {
+                            carouselApi.current.scrollNext();
                           }
                         }}
                         className="w-32 bg-primary hover:bg-primary/90 text-white font-semibold rounded-full"
@@ -91,7 +97,6 @@ export const OnboardingCarousel = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselNext className="hidden" />
       </Carousel>
     </div>
   );
