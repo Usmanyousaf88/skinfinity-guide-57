@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Button } from "./ui/button";
-import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { QuestionHeader } from "./quiz/QuestionHeader";
+import { QuestionOption } from "./quiz/QuestionOption";
 
 interface Question {
   id: number;
@@ -208,68 +209,44 @@ export const Quiz = () => {
   const selectedOption = answers[question.id];
 
   return (
-    <div className="min-h-screen bg-white p-6">
-      {/* Progress bar */}
-      <div className="flex items-center gap-4 mb-8">
-        <button 
-          onClick={handleBack}
-          className="rounded-full bg-gray-100 p-3"
-        >
-          <ArrowLeft className="h-6 w-6" />
-        </button>
-        <div className="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden">
-          <div 
-            className="h-full bg-black transition-all duration-300"
-            style={{ width: `${((currentQuestion + 1) / questions.length) * 100}%` }}
-          />
+    <div className="min-h-screen bg-white flex flex-col">
+      <div className="flex-1 p-6 flex flex-col">
+        <QuestionHeader 
+          currentQuestion={currentQuestion}
+          totalQuestions={questions.length}
+          onBack={handleBack}
+        />
+
+        <div className="mb-8">
+          <h1 className="text-4xl font-bold mb-2">{question.question}</h1>
+          {question.subtext && (
+            <p className="text-gray-600 text-lg">{question.subtext}</p>
+          )}
+        </div>
+
+        <div className="space-y-3 mb-auto">
+          {question.options.map((option, index) => (
+            <QuestionOption
+              key={index}
+              text={option.text}
+              subtext={option.subtext}
+              icon={option.icon}
+              isSelected={selectedOption === option.text}
+              onClick={() => handleSelect(option.text)}
+            />
+          ))}
+        </div>
+
+        <div className="sticky bottom-6 mt-6">
+          <Button
+            onClick={handleNext}
+            disabled={!selectedOption}
+            className="w-full py-6 text-lg rounded-full bg-primary hover:bg-primary/90 disabled:bg-gray-200"
+          >
+            Next
+          </Button>
         </div>
       </div>
-
-      {/* Question */}
-      <div className="mb-8">
-        <h1 className="text-4xl font-bold mb-2">{question.question}</h1>
-        {question.subtext && (
-          <p className="text-gray-600 text-lg">{question.subtext}</p>
-        )}
-      </div>
-
-      {/* Options */}
-      <div className="space-y-3 mb-8">
-        {question.options.map((option, index) => (
-          <button
-            key={index}
-            onClick={() => handleSelect(option.text)}
-            className={`w-full p-4 rounded-2xl text-left transition-all ${
-              selectedOption === option.text
-                ? "bg-black text-white"
-                : "bg-gray-50 hover:bg-gray-100"
-            }`}
-          >
-            <div className="flex items-center gap-3">
-              {option.icon && <span>{option.icon}</span>}
-              <div>
-                <div className="text-lg font-medium">{option.text}</div>
-                {option.subtext && (
-                  <div className={`text-sm ${
-                    selectedOption === option.text ? "text-gray-300" : "text-gray-500"
-                  }`}>
-                    {option.subtext}
-                  </div>
-                )}
-              </div>
-            </div>
-          </button>
-        ))}
-      </div>
-
-      {/* Next button */}
-      <Button
-        onClick={handleNext}
-        disabled={!selectedOption}
-        className="w-full py-6 text-lg rounded-full bg-black hover:bg-black/90 disabled:bg-gray-200"
-      >
-        Next
-      </Button>
     </div>
   );
 };
