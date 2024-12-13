@@ -67,22 +67,18 @@ export const OnboardingCarousel = () => {
                       <Button
                         size="lg"
                         onClick={() => navigate("/quiz")}
-                        className="w-32 bg-primary hover:bg-primary-hover text-white font-semibold rounded-full"
+                        className="w-32 bg-primary hover:bg-primary/90 text-white font-semibold rounded-full"
                       >
                         Get Started
                       </Button>
                     ) : (
                       <Button
                         size="lg"
-                        className="w-32 bg-primary hover:bg-primary-hover text-white font-semibold rounded-full"
-                        onClick={() => {
-                          const nextButton = document.querySelector('[data-carousel-next]');
-                          if (nextButton instanceof HTMLElement) {
-                            nextButton.click();
-                          }
-                        }}
+                        variant="default"
+                        className="w-32 bg-primary hover:bg-primary/90 text-white font-semibold rounded-full"
+                        asChild
                       >
-                        Next
+                        <CarouselNext>Next</CarouselNext>
                       </Button>
                     )}
                   </div>
@@ -91,7 +87,6 @@ export const OnboardingCarousel = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselNext className="hidden" />
       </Carousel>
     </div>
   );
