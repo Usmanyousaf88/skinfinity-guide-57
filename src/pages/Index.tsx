@@ -1,13 +1,7 @@
-import { Hero } from "@/components/Hero";
-import { Features } from "@/components/Features";
+import { OnboardingCarousel } from "@/components/OnboardingCarousel";
 
 const Index = () => {
-  return (
-    <div className="min-h-screen bg-white">
-      <Hero />
-      <Features />
-    </div>
-  );
+  return <OnboardingCarousel />;
 };
 
 export default Index;
