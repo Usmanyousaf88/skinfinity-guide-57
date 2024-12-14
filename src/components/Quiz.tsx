@@ -47,13 +47,15 @@ export const Quiz = () => {
           onBack={handleBack}
         />
 
-        <QuestionContent
-          question={question}
-          selectedOption={selectedOption}
-          onSelect={handleSelect}
-        />
+        <div className="flex-1 flex flex-col">
+          <QuestionContent
+            question={question}
+            selectedOption={selectedOption}
+            onSelect={handleSelect}
+          />
+        </div>
 
-        <div className="mt-auto pt-6">
+        <div className="mt-6">
           <QuizButton
             onClick={handleNext}
             disabled={!isInfoPage && !selectedOption}
