@@ -192,5 +192,21 @@ export const questions: Question[] = [
       { text: "Somewhat Interested" },
       { text: "Just Curious" }
     ]
+  },
+  {
+    id: 19,
+    isInfoOnly: true,
+    question: "Skincare Success",
+    subtext: "Here's what others are saying about their experience",
+    options: [],
+    infographic: "/lovable-uploads/8ec8d8f6-610b-4f42-9d64-f076e415c5ec.png"
+  },
+  {
+    id: 20,
+    isInfoOnly: true,
+    question: "ALL DONE!",
+    subtext: "Thank you for trusting Skin Care AI! We promise to always keep your personal information private and secure.",
+    options: [],
+    infographic: "/lovable-uploads/4ee41b1b-23d4-4c24-bae6-3e03f670174e.png"
   }
 ];
