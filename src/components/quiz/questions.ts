@@ -109,6 +109,13 @@ export const questions: Question[] = [
   },
   {
     id: 10,
+    isInfoOnly: true,
+    question: "Stress Effects on Skin",
+    options: [],
+    infographic: "/lovable-uploads/0f0bc5d0-66b9-4f8a-a335-4701ac783d6d.png"
+  },
+  {
+    id: 11,
     question: "How much water do you drink daily?",
     options: [
       { text: "Less than 1 liter" },
@@ -119,7 +126,7 @@ export const questions: Question[] = [
     ]
   },
   {
-    id: 11,
+    id: 12,
     question: "How much sleep do you get daily?",
     options: [
       { text: "Less than 5 hours" },
@@ -130,7 +137,7 @@ export const questions: Question[] = [
     ]
   },
   {
-    id: 12,
+    id: 13,
     question: "What type of skincare products do you prefer?",
     options: [
       { text: "Vegan" },
@@ -141,7 +148,7 @@ export const questions: Question[] = [
     ]
   },
   {
-    id: 13,
+    id: 14,
     question: "Do you wear sunscreen daily?",
     options: [
       { text: "Yes" },
@@ -150,14 +157,14 @@ export const questions: Question[] = [
     ]
   },
   {
-    id: 14,
+    id: 15,
     isInfoOnly: true,
     question: "Importance of Sun Protection",
     options: [],
     infographic: "/lovable-uploads/3d39488e-6635-43a6-8272-5ace1d9aed15.png"
   },
   {
-    id: 15,
+    id: 16,
     question: "How much time do you want to spend on skincare daily?",
     options: [
       { text: "Less than 5 minutes" },
@@ -167,7 +174,7 @@ export const questions: Question[] = [
     ]
   },
   {
-    id: 16,
+    id: 17,
     question: "What's your budget for skincare products?",
     options: [
       { text: "Less than $20" },
@@ -177,7 +184,7 @@ export const questions: Question[] = [
     ]
   },
   {
-    id: 17,
+    id: 18,
     question: "How committed are you to achieving your skincare goals?",
     options: [
       { text: "Fully Committed" },
