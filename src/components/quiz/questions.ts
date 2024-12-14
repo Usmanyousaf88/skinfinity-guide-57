@@ -10,6 +10,7 @@ export interface Question {
   subtext?: string;
   options: QuestionOption[];
   infographic?: string;
+  isInfoOnly?: boolean;
 }
 
 export const questions: Question[] = [
@@ -64,11 +65,17 @@ export const questions: Question[] = [
       { text: "Once Daily" },
       { text: "Occasionally" },
       { text: "Rarely" }
-    ],
-    infographic: "/lovable-uploads/542e967c-cbe1-4ffb-be97-e16ea27a1ca3.png"
+    ]
   },
   {
     id: 6,
+    isInfoOnly: true,
+    question: "Skincare Routine Guide",
+    options: [],
+    infographic: "/lovable-uploads/542e967c-cbe1-4ffb-be97-e16ea27a1ca3.png"
+  },
+  {
+    id: 7,
     question: "What skincare challenges do you face most?",
     options: [
       { text: "Acne" },
@@ -79,7 +86,7 @@ export const questions: Question[] = [
     ]
   },
   {
-    id: 7,
+    id: 8,
     question: "What's your skin tone?",
     options: [
       { text: "Fair" },
@@ -90,7 +97,7 @@ export const questions: Question[] = [
     ]
   },
   {
-    id: 8,
+    id: 9,
     question: "What environmental factors affect your skin the most?",
     options: [
       { text: "Pollution" },
@@ -101,7 +108,7 @@ export const questions: Question[] = [
     ]
   },
   {
-    id: 9,
+    id: 10,
     question: "How much water do you drink daily?",
     options: [
       { text: "Less than 1 liter" },
@@ -112,7 +119,7 @@ export const questions: Question[] = [
     ]
   },
   {
-    id: 10,
+    id: 11,
     question: "How much sleep do you get daily?",
     options: [
       { text: "Less than 5 hours" },
@@ -123,7 +130,7 @@ export const questions: Question[] = [
     ]
   },
   {
-    id: 11,
+    id: 12,
     question: "What type of skincare products do you prefer?",
     options: [
       { text: "Vegan" },
@@ -134,17 +141,23 @@ export const questions: Question[] = [
     ]
   },
   {
-    id: 12,
+    id: 13,
     question: "Do you wear sunscreen daily?",
     options: [
       { text: "Yes" },
       { text: "Sometimes" },
       { text: "No" }
-    ],
+    ]
+  },
+  {
+    id: 14,
+    isInfoOnly: true,
+    question: "Importance of Sun Protection",
+    options: [],
     infographic: "/lovable-uploads/6bc6d744-6a3e-4d4c-bef0-d1439eb98d06.png"
   },
   {
-    id: 13,
+    id: 15,
     question: "How much time do you want to spend on skincare daily?",
     options: [
       { text: "Less than 5 minutes" },
@@ -154,7 +167,7 @@ export const questions: Question[] = [
     ]
   },
   {
-    id: 14,
+    id: 16,
     question: "What's your budget for skincare products?",
     options: [
       { text: "Less than $20" },
@@ -164,7 +177,7 @@ export const questions: Question[] = [
     ]
   },
   {
-    id: 15,
+    id: 17,
     question: "How committed are you to achieving your skincare goals?",
     options: [
       { text: "Fully Committed" },

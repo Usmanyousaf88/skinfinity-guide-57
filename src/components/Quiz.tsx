@@ -36,6 +36,7 @@ export const Quiz = () => {
 
   const question = questions[currentQuestion];
   const selectedOption = answers[question.id];
+  const isInfoPage = question.isInfoOnly;
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
@@ -55,7 +56,7 @@ export const Quiz = () => {
         <div className="mt-auto pt-6">
           <QuizButton
             onClick={handleNext}
-            disabled={question.infographic ? false : !selectedOption}
+            disabled={!isInfoPage && !selectedOption}
           />
         </div>
       </div>
