@@ -59,13 +59,13 @@ export const questions: Question[] = [
   {
     id: 5,
     question: "How often do you follow a skincare routine?",
-    infographic: "/lovable-uploads/542e967c-cbe1-4ffb-be97-e16ea27a1ca3.png",
     options: [
       { text: "Twice Daily" },
       { text: "Once Daily" },
       { text: "Occasionally" },
       { text: "Rarely" }
-    ]
+    ],
+    infographic: "/lovable-uploads/542e967c-cbe1-4ffb-be97-e16ea27a1ca3.png"
   },
   {
     id: 6,
@@ -80,7 +80,7 @@ export const questions: Question[] = [
   },
   {
     id: 7,
-    question: "What’s your skin tone?",
+    question: "What's your skin tone?",
     options: [
       { text: "Fair" },
       { text: "Light" },
@@ -140,7 +140,8 @@ export const questions: Question[] = [
       { text: "Yes" },
       { text: "Sometimes" },
       { text: "No" }
-    ]
+    ],
+    infographic: "/lovable-uploads/6bc6d744-6a3e-4d4c-bef0-d1439eb98d06.png"
   },
   {
     id: 13,
@@ -154,7 +155,7 @@ export const questions: Question[] = [
   },
   {
     id: 14,
-    question: "What’s your budget for skincare products?",
+    question: "What's your budget for skincare products?",
     options: [
       { text: "Less than $20" },
       { text: "$20–$50" },
