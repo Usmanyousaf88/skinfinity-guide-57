@@ -154,7 +154,7 @@ export const questions: Question[] = [
     isInfoOnly: true,
     question: "Importance of Sun Protection",
     options: [],
-    infographic: "/lovable-uploads/f1baf05c-6633-4f36-98c3-5d3cafd4a944.png"
+    infographic: "/lovable-uploads/3d39488e-6635-43a6-8272-5ace1d9aed15.png"
   },
   {
     id: 15,
