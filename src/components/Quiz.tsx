@@ -40,14 +40,14 @@ export const Quiz = () => {
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
-      <div className="flex-1 p-6 flex flex-col">
+      <div className="flex-1 p-6 flex flex-col max-h-screen">
         <QuestionHeader 
           currentQuestion={currentQuestion}
           totalQuestions={questions.length}
           onBack={handleBack}
         />
 
-        <div className="flex-1 flex flex-col">
+        <div className="flex-1 flex flex-col overflow-hidden">
           <QuestionContent
             question={question}
             selectedOption={selectedOption}

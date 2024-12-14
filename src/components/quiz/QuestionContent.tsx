@@ -14,7 +14,7 @@ export const QuestionContent = ({ question, selectedOption, onSelect }: Question
         <img 
           src={question.infographic}
           alt={question.question}
-          className="max-w-full h-[calc(100vh-300px)] object-contain mx-auto"
+          className="max-w-full h-[calc(100vh-250px)] object-contain mx-auto"
         />
       </div>
     );
