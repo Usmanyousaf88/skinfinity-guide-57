@@ -18,7 +18,7 @@ export const QuizButton = ({ onClick, disabled }: QuizButtonProps) => {
           : "bg-primary text-primary-foreground hover:bg-primary/90"
       )}
     >
-      Next
+      {disabled ? "Next" : "Create My Skin Care Plan"}
     </Button>
   );
 };
