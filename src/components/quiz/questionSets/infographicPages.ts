@@ -4,9 +4,9 @@ export const infographicPages: Question[] = [
   {
     id: 6,
     isInfoOnly: true,
-    question: "Skincare Routine Guide",
+    question: "Healthy Skin Guide",
     options: [],
-    infographic: "/lovable-uploads/542e967c-cbe1-4ffb-be97-e16ea27a1ca3.png"
+    infographic: "/lovable-uploads/d2fade14-720a-4372-886e-efaffea37f31.png"
   },
   {
     id: 10,
