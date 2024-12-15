@@ -4,6 +4,7 @@ import { QuestionHeader } from "./quiz/QuestionHeader";
 import { QuizButton } from "./quiz/QuizButton";
 import { QuestionContent } from "./quiz/QuestionContent";
 import { questions } from "./quiz/questions";
+import { toast } from "sonner";
 
 export const Quiz = () => {
   const navigate = useNavigate();
@@ -15,7 +16,16 @@ export const Quiz = () => {
       setCurrentQuestion(prev => prev + 1);
     } else {
       // Handle quiz completion
-      console.log("Quiz completed", answers);
+      if (!localStorage.getItem("OPENAI_API_KEY")) {
+        const apiKey = prompt("Please enter your OpenAI API key to generate your personalized skin care plan:");
+        if (apiKey) {
+          localStorage.setItem("OPENAI_API_KEY", apiKey);
+        } else {
+          toast.error("An API key is required to generate your skin care plan");
+          return;
+        }
+      }
+      navigate("/skin-care-plan", { state: { answers } });
     }
   };
 
