@@ -4,9 +4,9 @@ export const conclusionPages: Question[] = [
   {
     id: 19,
     isInfoOnly: true,
-    question: "SKINCARE TESTIMONIAL",
+    question: "Give Us A Review",
     options: [],
-    infographic: "/lovable-uploads/ea550cce-7ee3-4f0f-9be3-f39d8a7afa9b.png"
+    infographic: "/lovable-uploads/ea6f4e5a-ef96-4a56-91b9-f215e9afb25f.png"
   },
   {
     id: 20,
