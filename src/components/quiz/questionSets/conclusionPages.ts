@@ -6,7 +6,7 @@ export const conclusionPages: Question[] = [
     isInfoOnly: true,
     question: "Give Us A Review",
     options: [],
-    infographic: "/lovable-uploads/ea6f4e5a-ef96-4a56-91b9-f215e9afb25f.png"
+    infographic: "/lovable-uploads/3053ee39-a5c0-4fbd-b26f-f2a4216b87ea.png"
   },
   {
     id: 20,
