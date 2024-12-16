@@ -20,7 +20,10 @@ import {
   Waves,
   CloudRain,
   Timer,
-  Wallet
+  Wallet,
+  Palette,
+  SunMedium,
+  Frown
 } from 'lucide-react';
 
 interface QuestionOptionProps {
@@ -40,6 +43,7 @@ const getIcon = (text: string) => {
   if (lowercaseText.includes('combination')) return <Activity className="w-5 h-5" />;
   if (lowercaseText.includes('sensitive')) return <Shield className="w-5 h-5" />;
   if (lowercaseText.includes('normal')) return <Heart className="w-5 h-5" />;
+  if (lowercaseText.includes('even') && lowercaseText.includes('tone')) return <Palette className="w-5 h-5" />;
   
   // Time-related answers
   if (lowercaseText.includes('daily')) return <Calendar className="w-5 h-5" />;
@@ -59,7 +63,7 @@ const getIcon = (text: string) => {
   if (lowercaseText.includes('hydrate')) return <Droplets className="w-5 h-5" />;
   if (lowercaseText.includes('glow') || lowercaseText.includes('bright')) return <Sun className="w-5 h-5" />;
   if (lowercaseText.includes('wrinkle') || lowercaseText.includes('aging')) return <Clock className="w-5 h-5" />;
-  if (lowercaseText.includes('tone') || lowercaseText.includes('even')) return <Star className="w-5 h-5" />;
+  if (lowercaseText.includes('tone') || lowercaseText.includes('even')) return <Palette className="w-5 h-5" />;
   
   // Product preferences
   if (lowercaseText.includes('vegan') || lowercaseText.includes('natural')) return <Leaf className="w-5 h-5" />;
@@ -69,11 +73,17 @@ const getIcon = (text: string) => {
   
   // Budget/commitment related
   if (lowercaseText.includes('committed') || lowercaseText.includes('fully')) return <Heart className="w-5 h-5" />;
-  if (lowercaseText.includes('interested')) return <Star className="w-5 h-5" />;
-  if (lowercaseText.includes('curious')) return <Sparkles className="w-5 h-5" />;
+  if (lowercaseText.includes('moderately committed')) return <Star className="w-5 h-5" />;
+  if (lowercaseText.includes('somewhat interested')) return <Sparkles className="w-5 h-5" />;
   if (lowercaseText.includes('$')) return <Wallet className="w-5 h-5" />;
   
-  // Age ranges
+  // Environmental factors
+  if (lowercaseText.includes('sun exposure')) return <SunMedium className="w-5 h-5" />;
+  if (lowercaseText.includes('stress')) return <Frown className="w-5 h-5" />;
+  if (lowercaseText.includes('pollution')) return <CloudRain className="w-5 h-5" />;
+  if (lowercaseText.includes('humidity')) return <Droplets className="w-5 h-5" />;
+  if (lowercaseText.includes('climate')) return <Sun className="w-5 h-5" />;
+  
   if (lowercaseText.includes('under')) return <Zap className="w-5 h-5" />;
   if (lowercaseText.includes('18-29')) return <Star className="w-5 h-5" />;
   if (lowercaseText.includes('30-39')) return <Sun className="w-5 h-5" />;
