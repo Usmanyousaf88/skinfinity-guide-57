@@ -1,3 +1,5 @@
+import { Check, Star, ThumbsUp, X } from "lucide-react";
+
 interface QuestionOptionProps {
   text: string;
   subtext?: string;
@@ -6,7 +8,16 @@ interface QuestionOptionProps {
   onClick: () => void;
 }
 
-export const QuestionOption = ({ text, subtext, icon, isSelected, onClick }: QuestionOptionProps) => {
+const getIcon = (text: string) => {
+  // Map common answers to icons
+  const lowercaseText = text.toLowerCase();
+  if (lowercaseText.includes("yes")) return <ThumbsUp className="w-5 h-5" />;
+  if (lowercaseText.includes("no")) return <X className="w-5 h-5" />;
+  if (lowercaseText.includes("sometimes") || lowercaseText.includes("moderate")) return <Star className="w-5 h-5" />;
+  return <Check className="w-5 h-5" />;
+};
+
+export const QuestionOption = ({ text, subtext, isSelected, onClick }: QuestionOptionProps) => {
   return (
     <button
       onClick={onClick}
@@ -17,7 +28,9 @@ export const QuestionOption = ({ text, subtext, icon, isSelected, onClick }: Que
       }`}
     >
       <div className="flex items-center gap-3">
-        {icon && <span>{icon}</span>}
+        <div className={`${isSelected ? "text-primary-foreground" : "text-gray-500"}`}>
+          {getIcon(text)}
+        </div>
         <div>
           <div className="text-lg font-medium">{text}</div>
           {subtext && (
