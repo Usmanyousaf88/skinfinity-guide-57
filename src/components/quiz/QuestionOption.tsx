@@ -12,7 +12,6 @@ import {
   ThumbsUp,
   X,
   Star,
-  Check,
   Zap,
   Leaf,
   Shield,
@@ -28,7 +27,6 @@ interface QuestionOptionProps {
 }
 
 const getIcon = (text: string) => {
-  // Map common answers to contextual icons
   const lowercaseText = text.toLowerCase();
   
   // Skin type answers
@@ -36,6 +34,7 @@ const getIcon = (text: string) => {
   if (lowercaseText.includes('dry')) return <Sun className="w-5 h-5" />;
   if (lowercaseText.includes('combination')) return <Activity className="w-5 h-5" />;
   if (lowercaseText.includes('sensitive')) return <Shield className="w-5 h-5" />;
+  if (lowercaseText.includes('normal')) return <Heart className="w-5 h-5" />;
   
   // Time-related answers
   if (lowercaseText.includes('daily')) return <Calendar className="w-5 h-5" />;
@@ -45,24 +44,41 @@ const getIcon = (text: string) => {
   
   // Frequency answers
   if (lowercaseText.includes('always') || lowercaseText.includes('twice')) return <BarChart3 className="w-5 h-5" />;
-  if (lowercaseText.includes('sometimes')) return <Star className="w-5 h-5" />;
-  if (lowercaseText.includes('rarely')) return <Zap className="w-5 h-5" />;
+  if (lowercaseText.includes('sometimes') || lowercaseText.includes('moderate')) return <Star className="w-5 h-5" />;
+  if (lowercaseText.includes('rarely') || lowercaseText.includes('less')) return <Zap className="w-5 h-5" />;
   
   // Goal-related answers
   if (lowercaseText.includes('clear') || lowercaseText.includes('acne')) return <Sparkles className="w-5 h-5" />;
   if (lowercaseText.includes('hydrate')) return <Droplets className="w-5 h-5" />;
   if (lowercaseText.includes('glow') || lowercaseText.includes('bright')) return <Sun className="w-5 h-5" />;
+  if (lowercaseText.includes('wrinkle') || lowercaseText.includes('aging')) return <Clock className="w-5 h-5" />;
+  if (lowercaseText.includes('tone') || lowercaseText.includes('even')) return <Star className="w-5 h-5" />;
   
   // Product preferences
   if (lowercaseText.includes('vegan') || lowercaseText.includes('natural')) return <Leaf className="w-5 h-5" />;
   if (lowercaseText.includes('dermatologist')) return <HandHeart className="w-5 h-5" />;
   
+  // Budget/commitment related
+  if (lowercaseText.includes('committed') || lowercaseText.includes('fully')) return <Heart className="w-5 h-5" />;
+  if (lowercaseText.includes('interested')) return <Star className="w-5 h-5" />;
+  if (lowercaseText.includes('curious')) return <Sparkles className="w-5 h-5" />;
+  
+  // Age ranges
+  if (lowercaseText.includes('under')) return <Zap className="w-5 h-5" />;
+  if (lowercaseText.includes('18-29')) return <Star className="w-5 h-5" />;
+  if (lowercaseText.includes('30-39')) return <Sun className="w-5 h-5" />;
+  if (lowercaseText.includes('40-49')) return <Moon className="w-5 h-5" />;
+  if (lowercaseText.includes('50+')) return <Clock className="w-5 h-5" />;
+  
   // Yes/No answers
   if (lowercaseText === 'yes') return <ThumbsUp className="w-5 h-5" />;
   if (lowercaseText === 'no') return <X className="w-5 h-5" />;
   
-  // Default icon for other cases
-  return <Check className="w-5 h-5" />;
+  // Nutrition/health related
+  if (lowercaseText.includes('diet') || lowercaseText.includes('food')) return <Apple className="w-5 h-5" />;
+  
+  // Default icon for any remaining cases
+  return <Star className="w-5 h-5" />;
 };
 
 const getShapeClass = (text: string) => {
