@@ -73,7 +73,7 @@ const getIcon = (text: string) => {
   
   // Budget/commitment related
   if (lowercaseText.includes('committed') || lowercaseText.includes('fully')) return <Heart className="w-5 h-5" />;
-  if (lowercaseText.includes('moderately committed')) return <Star className="w-5 h-5" />;
+  if (lowercaseText.includes('moderately committed')) return <ThumbsUp className="w-5 h-5" />;
   if (lowercaseText.includes('somewhat interested')) return <Sparkles className="w-5 h-5" />;
   if (lowercaseText.includes('$')) return <Wallet className="w-5 h-5" />;
   
