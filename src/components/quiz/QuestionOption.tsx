@@ -1,4 +1,23 @@
-import { Check, Star, ThumbsUp, X } from "lucide-react";
+import { 
+  BarChart3, 
+  Apple, 
+  HandHeart, 
+  Calendar, 
+  Sun, 
+  Moon, 
+  Clock, 
+  Heart, 
+  Droplets, 
+  Sparkles, 
+  ThumbsUp,
+  X,
+  Star,
+  Check,
+  Zap,
+  Leaf,
+  Shield,
+  Activity
+} from 'lucide-react';
 
 interface QuestionOptionProps {
   text: string;
@@ -9,19 +28,48 @@ interface QuestionOptionProps {
 }
 
 const getIcon = (text: string) => {
-  // Map common answers to icons
+  // Map common answers to contextual icons
   const lowercaseText = text.toLowerCase();
-  if (lowercaseText.includes("yes")) return <ThumbsUp className="w-5 h-5" />;
-  if (lowercaseText.includes("no")) return <X className="w-5 h-5" />;
-  if (lowercaseText.includes("sometimes") || lowercaseText.includes("moderate")) return <Star className="w-5 h-5" />;
+  
+  // Skin type answers
+  if (lowercaseText.includes('oily')) return <Droplets className="w-5 h-5" />;
+  if (lowercaseText.includes('dry')) return <Sun className="w-5 h-5" />;
+  if (lowercaseText.includes('combination')) return <Activity className="w-5 h-5" />;
+  if (lowercaseText.includes('sensitive')) return <Shield className="w-5 h-5" />;
+  
+  // Time-related answers
+  if (lowercaseText.includes('daily')) return <Calendar className="w-5 h-5" />;
+  if (lowercaseText.includes('morning') || lowercaseText.includes('am')) return <Sun className="w-5 h-5" />;
+  if (lowercaseText.includes('evening') || lowercaseText.includes('pm')) return <Moon className="w-5 h-5" />;
+  if (lowercaseText.includes('hour') || lowercaseText.includes('schedule')) return <Clock className="w-5 h-5" />;
+  
+  // Frequency answers
+  if (lowercaseText.includes('always') || lowercaseText.includes('twice')) return <BarChart3 className="w-5 h-5" />;
+  if (lowercaseText.includes('sometimes')) return <Star className="w-5 h-5" />;
+  if (lowercaseText.includes('rarely')) return <Zap className="w-5 h-5" />;
+  
+  // Goal-related answers
+  if (lowercaseText.includes('clear') || lowercaseText.includes('acne')) return <Sparkles className="w-5 h-5" />;
+  if (lowercaseText.includes('hydrate')) return <Droplets className="w-5 h-5" />;
+  if (lowercaseText.includes('glow') || lowercaseText.includes('bright')) return <Sun className="w-5 h-5" />;
+  
+  // Product preferences
+  if (lowercaseText.includes('vegan') || lowercaseText.includes('natural')) return <Leaf className="w-5 h-5" />;
+  if (lowercaseText.includes('dermatologist')) return <HandHeart className="w-5 h-5" />;
+  
+  // Yes/No answers
+  if (lowercaseText === 'yes') return <ThumbsUp className="w-5 h-5" />;
+  if (lowercaseText === 'no') return <X className="w-5 h-5" />;
+  
+  // Default icon for other cases
   return <Check className="w-5 h-5" />;
 };
 
 const getShapeClass = (text: string) => {
   const lowercaseText = text.toLowerCase();
-  if (lowercaseText.includes("yes")) return "rounded-full"; // Circle for positive answers
-  if (lowercaseText.includes("no")) return "rotate-45"; // Diamond for negative answers
-  if (lowercaseText.includes("sometimes") || lowercaseText.includes("moderate")) return "rounded-lg"; // Rounded square for neutral answers
+  if (lowercaseText.includes('yes')) return "rounded-full"; // Circle for positive answers
+  if (lowercaseText.includes('no')) return "rotate-45"; // Diamond for negative answers
+  if (lowercaseText.includes('sometimes') || lowercaseText.includes('moderate')) return "rounded-lg"; // Rounded square for neutral answers
   return "rounded-md"; // Default shape
 };
 
