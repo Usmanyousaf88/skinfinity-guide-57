@@ -73,7 +73,7 @@ const getIcon = (text: string) => {
   
   // Budget/commitment related
   if (lowercaseText.includes('committed') || lowercaseText.includes('fully')) return <Heart className="w-5 h-5" />;
-  if (lowercaseText.includes('moderately committed')) return <ThumbsUp className="w-5 h-5" />;
+  if (lowercaseText === 'moderately committed') return <Star className="w-5 h-5" />;
   if (lowercaseText.includes('somewhat interested')) return <Sparkles className="w-5 h-5" />;
   if (lowercaseText.includes('$')) return <Wallet className="w-5 h-5" />;
   
@@ -89,11 +89,6 @@ const getIcon = (text: string) => {
   if (lowercaseText.includes('30-39')) return <Sun className="w-5 h-5" />;
   if (lowercaseText.includes('40-49')) return <Moon className="w-5 h-5" />;
   if (lowercaseText.includes('50+')) return <Clock className="w-5 h-5" />;
-  
-  // Environmental factors
-  if (lowercaseText.includes('pollution')) return <CloudRain className="w-5 h-5" />;
-  if (lowercaseText.includes('humidity')) return <Droplets className="w-5 h-5" />;
-  if (lowercaseText.includes('climate')) return <Sun className="w-5 h-5" />;
   
   // Yes/No answers
   if (lowercaseText === 'yes') return <ThumbsUp className="w-5 h-5" />;
