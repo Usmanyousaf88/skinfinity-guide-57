@@ -17,6 +17,14 @@ const getIcon = (text: string) => {
   return <Check className="w-5 h-5" />;
 };
 
+const getShapeClass = (text: string) => {
+  const lowercaseText = text.toLowerCase();
+  if (lowercaseText.includes("yes")) return "rounded-full"; // Circle for positive answers
+  if (lowercaseText.includes("no")) return "rotate-45"; // Diamond for negative answers
+  if (lowercaseText.includes("sometimes") || lowercaseText.includes("moderate")) return "rounded-lg"; // Rounded square for neutral answers
+  return "rounded-md"; // Default shape
+};
+
 export const QuestionOption = ({ text, subtext, isSelected, onClick }: QuestionOptionProps) => {
   return (
     <button
@@ -28,7 +36,13 @@ export const QuestionOption = ({ text, subtext, isSelected, onClick }: QuestionO
       }`}
     >
       <div className="flex items-center gap-3">
-        <div className={`${isSelected ? "text-primary-foreground" : "text-gray-500"}`}>
+        <div 
+          className={`p-2 ${getShapeClass(text)} ${
+            isSelected 
+              ? "bg-primary-foreground/20 text-primary-foreground" 
+              : "bg-gray-200 text-gray-500"
+          }`}
+        >
           {getIcon(text)}
         </div>
         <div>
