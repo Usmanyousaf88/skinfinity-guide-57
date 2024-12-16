@@ -50,9 +50,10 @@ export const SkinCarePlan = () => {
     },
     enabled: !!answers && !!localStorage.getItem("OPENAI_API_KEY"),
     retry: false,
-    onError: (error) => {
-      toast.error("Failed to generate your skin care plan. Please try again.");
-      console.error("Error generating skin care plan:", error);
+    meta: {
+      onError: () => {
+        toast.error("Failed to generate your skin care plan. Please try again.");
+      }
     }
   });
 
